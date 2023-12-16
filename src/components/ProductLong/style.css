@@ -1,0 +1,23 @@
+#product_long{
+    height: 300px;
+    width: 100%;
+    padding: 10px;
+}
+
+.product_long_text{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-right: 30px;
+  padding-top: 5px;
+}
+
+.product_long_content{
+    display: inline-flex;
+    height: 100%;
+}
+
+.product_long_image{   
+    flex-shrink: 0;
+    overflow: hidden; 
+}

@@ -1,0 +1,12 @@
+.product{
+    padding: 0 24px;
+}
+
+#product_button{
+    position: absolute;
+    z-index: 10;
+    bottom: 30px;
+}
+
+
+

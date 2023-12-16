@@ -1,0 +1,8 @@
+.appwindow_content{
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 48px 48px;
+  max-width: 460px;
+  min-height: 408px;
+}
