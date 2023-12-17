@@ -16,6 +16,7 @@ const Header = () => {
   const [isOpen4, setOpen4] = useState(false);
   const [isOpen5, setOpen5] = useState(false);
   const [isOpen6, setOpen6] = useState(false);
+  const [isOpen7, setOpen7] = useState(false);
 
   return (
     <div className="header">
@@ -32,7 +33,9 @@ const Header = () => {
         </WindowHeader>
         <div className="container">
           <div className="icon">
-            <h2 style={{ fontSize: "25px" }}>TINKOFF</h2>
+            <a href="#">
+              <h2 style={{ fontSize: "25px" }}>TINKOFF</h2>
+            </a>
           </div>
           <ul className="nav">
             <div className="nav_1">
@@ -67,7 +70,10 @@ const Header = () => {
                   </MenuListItem>
                 </MenuList>
 
-                <MenuList className={`menu_bank ${isOpen1 ? "active" : ""}`}>
+                <MenuList
+                  style={{ position: "absolute" }}
+                  className={`menu_bank ${isOpen1 ? "active" : ""}`}
+                >
                   <MenuListItem size="sm">Кредитные карты</MenuListItem>
                   <Separator />
                   <MenuListItem size="sm">Дебетовые карты</MenuListItem>
@@ -82,7 +88,7 @@ const Header = () => {
                 </MenuList>
 
                 <MenuList
-                  style={{ marginTop: "34px" }}
+                  style={{ marginTop: "34px", position: "absolute" }}
                   className={`menu_bank ${isOpen2 ? "active" : ""}`}
                 >
                   <MenuListItem size="sm">Брокерский счет</MenuListItem>
@@ -97,7 +103,7 @@ const Header = () => {
                 </MenuList>
 
                 <MenuList
-                  style={{ marginTop: "64px" }}
+                  style={{ marginTop: "64px", position: "absolute" }}
                   className={`menu_bank ${isOpen3 ? "active" : ""}`}
                 >
                   <MenuListItem size="sm">Заказать симку</MenuListItem>
@@ -113,7 +119,7 @@ const Header = () => {
                 </MenuList>
 
                 <MenuList
-                  style={{ marginTop: "92px" }}
+                  style={{ marginTop: "92px", position: "absolute" }}
                   className={`menu_bank ${isOpen4 ? "active" : ""}`}
                 >
                   <MenuListItem size="sm">ОСАГО</MenuListItem>
@@ -128,7 +134,7 @@ const Header = () => {
                 </MenuList>
 
                 <MenuList
-                  style={{ marginTop: "116px" }}
+                  style={{ marginTop: "116px", position: "absolute" }}
                   className={`menu_bank ${isOpen5 ? "active" : ""}`}
                 >
                   <MenuListItem size="sm">Авиабилеты</MenuListItem>
@@ -140,7 +146,7 @@ const Header = () => {
                 </MenuList>
 
                 <MenuList
-                  style={{ marginTop: "150px" }}
+                  style={{ marginTop: "150px", position: "absolute" }}
                   className={`menu_bank ${isOpen6 ? "active" : ""}`}
                 >
                   <MenuListItem size="sm">Топливо</MenuListItem>
@@ -167,11 +173,52 @@ const Header = () => {
               <Button variant="thin">Еще</Button>
             </div>
           </ul>
-          <div className="lk">
-            <Button variant="thin">
+          <div className="lk" style={{ position: "relative" }}>
+            <Button variant="thin" onClick={() => setOpen7(!isOpen7)}>
               Личный кабинет
               <img className="lk_img" src="./1699635.svg"></img>
             </Button>
+            <MenuList
+              style={{
+                position: "absolute",
+                display: "flex",
+                flexDirection: "column",
+                width: "180px",
+                marginLeft: "0",
+              }}
+              className={`menu ${isOpen7 ? "active" : ""}`}
+            >
+              <MenuListItem>
+                <img
+                  src="https://acdn.tinkoff.ru/static/blocks/files/f432f710-b13a-4713-8d8a-2c7002968338.svg"
+                  alt=""
+                />
+                Интернет банк
+              </MenuListItem>
+
+              <MenuListItem>
+                <img
+                  src="https://acdn.tinkoff.ru/static/blocks/files/d7a23f9f-308a-4a82-b8ee-75de0d450e92.svg"
+                  alt=""
+                />
+                Тинькофф Бизнес
+              </MenuListItem>
+              <MenuListItem>
+                <img
+                  src="https://acdn.tinkoff.ru/static/blocks/files/635fc5f0-d563-40dc-b901-bba3bc90b291.svg"
+                  alt=""
+                />
+                Инвестиции
+              </MenuListItem>
+
+              <MenuListItem>
+                <img
+                  src="https://acdn.tinkoff.ru/static/blocks/files/3bde1b2f-a3e9-461e-9195-f5407606144d.svg"
+                  alt=""
+                />
+                Тинькофф Мобайл
+              </MenuListItem>
+            </MenuList>
           </div>
         </div>
       </div>
